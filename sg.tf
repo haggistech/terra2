@@ -1,4 +1,4 @@
-module "vote_service_sg" {
+module "web_sg" {
   source = "terraform-aws-modules/security-group/aws"
 
   name        = "SGPSPWeb"
@@ -49,5 +49,7 @@ module "alb_sg" {
 output "psp_alb_sg_id" {
   value = "${module.alb_sg.this_security_group_id}"
 }
-
+output "psp_web_sg_id" {
+  value = "${module.alb_sg.this_security_group_id}"
+}
 
