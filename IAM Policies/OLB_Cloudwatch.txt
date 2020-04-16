@@ -1,0 +1,29 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "cloudwatch:Describe*",
+                "cloudwatch:Get*",
+                "cloudwatch:List*",
+                "cloudwatch:PutMetricData",
+                "cloudwatch:PutMetricData",
+                "cloudwatch:PutMetricAlarm",
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:DescribeLogGroups",
+                "logs:DescribeLogStreams",
+                "logs:PutLogEvents",
+                "logs:Get*",
+                "logs:Describe*",
+                "logs:TestMetricFilter",
+                "sns:Get*",
+                "sns:List*",
+                "ec2:DescribeInstanceStatus",
+                "ec2:DescribeInstances"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        }
+    ]
+}
