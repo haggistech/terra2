@@ -2,10 +2,10 @@ module "asggrn" {
   source  = "terraform-aws-modules/autoscaling/aws"
   version = "~> 3.0"
   
-  name = "pspappngrn"
+  name = "${var.proj}appngrn"
 
   # Launch configuration
-  lc_name = "pspappngrn"
+  lc_name = "${var.proj}appngrn"
 
   image_id              = var.ami
   instance_type         = "t2.micro"
@@ -37,7 +37,7 @@ module "asggrn" {
   ]
 
   # Auto scaling group
-  asg_name                  = "pspappngrn"
+  asg_name                  = "${var.proj}appngrn"
   vpc_zone_identifier       = var.vpc01_subnets
   health_check_type         = "ELB"
   min_size                  = 0
@@ -65,10 +65,10 @@ module "asgblu" {
   source  = "terraform-aws-modules/autoscaling/aws"
   version = "~> 3.0"
   
-  name = "pspappnblu"
+  name = "${var.proj}appnblu"
 
   # Launch configuration
-  lc_name = "pspappnblu"
+  lc_name = "${var.proj}appnblu"
 
   image_id              = var.ami
   instance_type         = "t2.micro"
@@ -96,7 +96,7 @@ module "asgblu" {
   ]
 
   # Auto scaling group
-  asg_name                  = "pspappnblu"
+  asg_name                  = "${var.proj}appnblu"
   vpc_zone_identifier       = var.vpc01_subnets
   health_check_type         = "ELB"
   min_size                  = 0
@@ -128,10 +128,10 @@ module "asgpxy" {
   source  = "terraform-aws-modules/autoscaling/aws"
   version = "~> 3.0"
   
-  name = "psppxy"
+  name = "${var.proj}pxy"
 
   # Launch configuration
-  lc_name = "psppxy"
+  lc_name = "${var.proj}pxy"
 
   image_id              = var.ami
   instance_type         = "t2.micro"
@@ -159,7 +159,7 @@ module "asgpxy" {
   ]
 
   # Auto scaling group
-  asg_name                  = "psppxy"
+  asg_name                  = "${var.proj}pxy"
   vpc_zone_identifier       = var.vpc01_subnets
   health_check_type         = "ELB"
   min_size                  = 0
